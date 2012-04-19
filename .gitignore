@@ -1,0 +1,17 @@
+var/*
+src/*
+bin*
+develop-eggs*
+eggs/*
+parts/*
+include/
+lib/
+lib64
+*.egg-info
+*.mo
+pickedversions.cfg
+.installed.cfg
+.mr.developer.cfg
+.zopeskel
+*~
+omelette
