@@ -46,7 +46,7 @@ status: fetch localstatus
 
 localstatus:
 	@echo "=================== $@ ======================="
-	@for p in plonesocial.microblog plonesocial.activitystream ; \
+	@for p in plonesocial.suite plonesocial.microblog plonesocial.activitystream ; \
 		do ( echo '---'; echo -n "$$p... " && cd src/$$p && git status; ); \
 	done
 	@echo '---'
@@ -55,7 +55,7 @@ localstatus:
 
 rebase:
 	@echo "=================== $@ ======================="
-	@for p in plonesocial.microblog plonesocial.activitystream ; \
+	@for p in plonesocial.suite plonesocial.microblog plonesocial.activitystream ; \
 		do ( \
 			echo '---'; \
 			echo -n "$$p... "; \
@@ -70,7 +70,7 @@ rebase:
 
 push:
 	@echo "=================== $@ ======================="
-	@for p in plonesocial.microblog plonesocial.activitystream ; \
+	@for p in plonesocial.suite plonesocial.microblog plonesocial.activitystream ; \
 		do ( echo '---'; echo -n "$$p... " && cd src/$$p && git $@; ); \
 	done
 	@echo '---'
@@ -79,12 +79,12 @@ push:
 
 test:
 	@echo "=================== $@ ======================="
-#	bin/test -s plonesocial.microblog plonesocial.activitystream
+#	bin/test -s plonesocial.suite plonesocial.microblog plonesocial.activitystream
 
 # branches
 ls: 
 	@echo "=================== $@ ======================="
-	@for p in plonesocial.microblog plonesocial.activitystream ; \
+	@for p in plonesocial.suite plonesocial.microblog plonesocial.activitystream ; \
 		do ( echo '---'; echo "$$p... " && cd src/$$p && git branch -a -v; ); \
 	done
 	@echo '---'
@@ -94,7 +94,7 @@ ls:
 # read remote
 fetch: 
 	@echo "=================== $@ ======================="
-	@for p in plonesocial.microblog plonesocial.activitystream ; \
+	@for p in plonesocial.suite plonesocial.microblog plonesocial.activitystream ; \
 		do ( echo '---'; echo "$$p... " && cd src/$$p && git $@; ); \
 	done
 	@echo '---'
