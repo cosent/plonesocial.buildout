@@ -30,8 +30,12 @@ plonesocial.like
 `plonesocial.buildout`_
  This buildout. Not a Python package. Intended for Plonesocial developers only.
 
-
 This is a work in progress and not suitable for general release yet.
+
+.. _plonesocial.microblog: https://github.com/cosent/plonesocial.microblog
+.. _plonesocial.activitystream: https://github.com/cosent/plonesocial.activitystream
+.. _plonesocial.suite: https://github.com/cosent/plonesocial.suite
+.. _plonesocial.buildout: https://github.com/cosent/plonesocial.buildout
 
 
 Using this buildout
@@ -68,7 +72,3 @@ Alternatively, you can fork the sources on github and
 use your own push repositories. Please don't forget submit merge requests in that case!
 
 
-.. _plonesocial.microblog: https://github.com/cosent/plonesocial.microblog
-.. _plonesocial.activitystream: https://github.com/cosent/plonesocial.activitystream
-.. _plonesocial.suite: https://github.com/cosent/plonesocial.suite
-.. _plonesocial.buildout: https://github.com/cosent/plonesocial.buildout
