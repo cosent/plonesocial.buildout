@@ -65,7 +65,7 @@ You'll have to to that for each src package you want to push.
 This only works if you have push rights, which you get by sending a mail to
 guido.stevens@cosent.net with your github user id. 
 Alternatively, you can fork the sources on github and
-use your own push repositories. Please don't forget submit push requests in that case!
+use your own push repositories. Please don't forget submit merge requests in that case!
 
 
 .. _plonesocial.microblog: https://github.com/cosent/plonesocial.microblog
