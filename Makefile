@@ -26,7 +26,6 @@ lucid: _check_root _check_apt
 #	# for cmmi compilation - soelim
 #	apt-get install groff-base
 
-
 start:
 	bin/supervisord
 
