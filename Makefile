@@ -1,10 +1,13 @@
-default: all
+default: async
 
 all: bin/buildout
 	bin/buildout
 
 fast: bin/buildout
 	bin/buildout -N
+
+async: bin/buildout
+	bin/buildout -N -c async.cfg
 
 #production: bin/buildout
 #	bin/buildout -c production.cfg
