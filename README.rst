@@ -63,6 +63,7 @@ A separate `async.cfg` buildout config is available to enable plone.app.async su
   bin/zeo start; bin/instance start; bin/worker start
 
 Async currently does not work, use async.cfg only if you want to investigate (and fix) transaction errors.
+See https://dev.plone.org/ticket/12871
 
 Just re-run the normal buildout to get rid of async, and you'll have a working installation again.
 
