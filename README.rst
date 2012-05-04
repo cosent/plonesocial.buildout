@@ -78,6 +78,6 @@ into ./src/. To enable push, create a fork on github and then::
 
 You'll have to to that for each src package you want to push, and/or for the buildout itself.
 
-Please don't forget to submit push requests :-)
+Please don't forget to submit pull requests :-)
 
 
