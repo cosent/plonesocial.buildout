@@ -1,4 +1,4 @@
-default: async
+default: fast
 
 all: bin/buildout
 	bin/buildout
