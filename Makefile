@@ -73,11 +73,11 @@ rebase:
 push:
 	@echo "=================== $@ ======================="
 	@for p in plonesocial.suite plonesocial.microblog plonesocial.activitystream ; \
-		do ( echo '---'; echo -n "$$p... " && cd src/$$p && git $@; ); \
+		do ( echo '---'; echo -n "$$p... " && cd src/$$p && git push --tags; ); \
 	done
 	@echo '---'
 	@echo -n 'buildout... '
-	@git $@
+	@git push --tags
 
 test:
 	@echo "=================== $@ ======================="
