@@ -82,7 +82,7 @@ push:
 
 test:
 	@echo "=================== $@ ======================="
-	bin/test -s plonesocial.suite -s plonesocial.microblog -s plonesocial.activitystream plonesocial.network
+	bin/test -s plonesocial.suite -s plonesocial.microblog -s plonesocial.activitystream -s plonesocial.network
 
 # branches
 ls: 
