@@ -17,7 +17,7 @@ Plonesocial consists of:
 `plonesocial.activitystream`_
  Lists content changes, discussion replies, and status updates
 
-plonesocial.network
+`plonesocial.network`_
  Follow/unfollow of users
 
 plonesocial.like
@@ -34,6 +34,7 @@ This is a work in progress and not suitable for general release yet.
 
 .. _plonesocial.microblog: https://github.com/cosent/plonesocial.microblog
 .. _plonesocial.activitystream: https://github.com/cosent/plonesocial.activitystream
+.. _plonesocial.network: https://github.com/cosent/plonesocial.network
 .. _plonesocial.suite: https://github.com/cosent/plonesocial.suite
 .. _plonesocial.buildout: https://github.com/cosent/plonesocial.buildout
 
@@ -52,20 +53,6 @@ The included Makefile is optimized for use on Ubuntu Lucid::
 
   make lucid
   make
-
-
-Async
------
-
-A separate `async.cfg` buildout config is available to enable plone.app.async support::
-
-  bin/buildout -c async.cfg
-  bin/zeo start; bin/instance start; bin/worker start
-
-Async currently does not work, use async.cfg only if you want to investigate (and fix) transaction errors.
-See https://dev.plone.org/ticket/12871
-
-Just re-run the normal buildout to get rid of async, and you'll have a working installation again.
 
 
 Github sources
