@@ -6,11 +6,11 @@ all: bin/buildout
 fast: bin/buildout
 	bin/buildout -N
 
-async: bin/buildout
-	bin/buildout -N -c async.cfg
+robot-server:
+	bin/robot-server plonesocial.suite.testing.PLONESOCIAL_ROBOT_TESTING
 
-#production: bin/buildout
-#	bin/buildout -c production.cfg
+robot-predepends:
+	sudo apt-get install -y firefox python-tk
 
 clean:
 	@rm -f bin/* .installed.cfg .mr.developer.cfg
@@ -18,7 +18,7 @@ clean:
 #	@find src -type d -name "Paste*" | xargs rm -rf
 #	@echo "If you keep having problems, purge /var/tmp/dist/* and your eggs cache"
 
-predepends: lucid
+predepends: robot-predepends
 
 lucid: _check_root _check_apt
 	apt-get install make gcc python2.6-dev libjpeg62-dev zlib1g-dev python-setuptools
@@ -125,8 +125,9 @@ bin/buildout: bin/python2.7
 bin/python2.7:
 	@virtualenv --clear -p python2.7 --no-site-packages --distribute .
 
-_check_root:
-	@test "$$USER" = "root" || ( echo "Run that as root"; exit 1 )
+precise: _check_apt
+	sudo apt-get install -y make gcc python2.7-dev libjpeg-dev zlib1g-dev python-setuptools wget jed git-core openssh-client
+	sudo easy_install virtualenv
 
 _check_apt:
 	@grep 'restricted' /etc/apt/sources.list || ( echo 'Add to /etc/apt/sources.list: restricted universe multiverse'; exit 1 )
