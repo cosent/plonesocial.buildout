@@ -80,9 +80,15 @@ push:
 	@git push
 	@git push --tags
 
-test:
+test: flake8
 	@echo "=================== $@ ======================="
 	bin/test -s plonesocial.suite -s plonesocial.microblog -s plonesocial.activitystream -s plonesocial.network
+
+flake8:
+	bin/flake8 src/plonesocial.suite/src/plonesocial
+	bin/flake8 src/plonesocial.microblog/plonesocial
+	bin/flake8 src/plonesocial.activitystream/plonesocial
+	bin/flake8 src/plonesocial.network/plonesocial
 
 # branches
 ls: 
