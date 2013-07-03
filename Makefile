@@ -48,31 +48,16 @@ status: fetch localstatus
 
 localstatus:
 	@echo "=================== $@ ======================="
-	@for p in plonesocial.suite plonesocial.microblog plonesocial.activitystream plonesocial.network ; \
+	@for p in plonesocial.suite plonesocial.microblog plonesocial.activitystream plonesocial.network plonesocial.theme ; \
 		do ( echo '---'; echo -n "$$p... " && cd src/$$p && git status; ); \
 	done
 	@echo '---'
 	@echo -n "buildout... "
 	@git status
 
-rebase:
-	@echo "=================== $@ ======================="
-	@for p in plonesocial.suite plonesocial.microblog plonesocial.activitystream plonesocial.network ; \
-		do ( \
-			echo '---'; \
-			echo -n "$$p... "; \
-			cd src/$$p && git fetch; \
-			b=`git branch|grep '^\*'|cut -f2 -d' '`; \
-			git $@ origin/$$b; \
-		); \
-	done
-	@echo -n "buildout... "
-	b=`git branch|grep '^\*'|cut -f2 -d' '`; \
-	git $@ origin/$$b
-
 push:
 	@echo "=================== $@ ======================="
-	@for p in plonesocial.suite plonesocial.microblog plonesocial.activitystream plonesocial.network ; \
+	@for p in plonesocial.suite plonesocial.microblog plonesocial.activitystream plonesocial.network plonesocial.theme ; \
 		do ( echo '---'; echo -n "$$p... " && cd src/$$p && git push && git push --tags ); \
 	done
 	@echo '---'
@@ -82,13 +67,15 @@ push:
 
 test: flake8
 	@echo "=================== $@ ======================="
-	bin/test -s plonesocial.suite -s plonesocial.microblog -s plonesocial.activitystream -s plonesocial.network
+	bin/test -s plonesocial.suite -s plonesocial.microblog -s plonesocial.activitystream -s plonesocial.network plonesocial.theme
 
 flake8:
 	bin/flake8 src/plonesocial.suite/src/plonesocial
 	bin/flake8 src/plonesocial.microblog/plonesocial
 	bin/flake8 src/plonesocial.activitystream/plonesocial
 	bin/flake8 src/plonesocial.network/plonesocial
+## FIXME
+#	bin/flake8 src/plonesocial.theme/plonesocial
 
 # branches
 ls: 
