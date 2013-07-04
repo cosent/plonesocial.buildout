@@ -74,8 +74,7 @@ flake8:
 	bin/flake8 src/plonesocial.microblog/plonesocial
 	bin/flake8 src/plonesocial.activitystream/plonesocial
 	bin/flake8 src/plonesocial.network/plonesocial
-## FIXME
-#	bin/flake8 src/plonesocial.theme/plonesocial
+	bin/flake8 src/plonesocial.theme/plonesocial
 
 # branches
 ls: 
