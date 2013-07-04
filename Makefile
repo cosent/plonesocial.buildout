@@ -67,7 +67,7 @@ push:
 
 test: flake8
 	@echo "=================== $@ ======================="
-	bin/test -s plonesocial.suite -s plonesocial.microblog -s plonesocial.activitystream -s plonesocial.network plonesocial.theme
+	bin/test -s plonesocial.suite -s plonesocial.microblog -s plonesocial.activitystream -s plonesocial.network -s plonesocial.theme
 
 flake8:
 	bin/flake8 src/plonesocial.suite/src/plonesocial
