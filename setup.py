@@ -1,6 +1,6 @@
 from setuptools import setup
 
-version = '0.5.0dev'
+version = '0.5.0rc1'
 
 setup(name="plonesocial.buildout",
       version=version,
