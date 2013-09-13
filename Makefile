@@ -1,4 +1,4 @@
-default: fast
+default: all
 
 all: bin/buildout
 	bin/buildout
