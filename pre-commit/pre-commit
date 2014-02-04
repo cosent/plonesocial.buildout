@@ -1,0 +1,4 @@
+#!/bin/bash
+
+source {PWD}/bin/activate
+{PWD}/bin/python {PWD}/pre-commit/pre-commit.py
