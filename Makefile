@@ -76,6 +76,14 @@ flake8:
 	bin/flake8 src/plonesocial.network/plonesocial
 	bin/flake8 src/plonesocial.theme/plonesocial
 
+rc:
+	bin/release -c cook
+	bin/release -c dist
+
+release:
+	bin/release cook
+	bin/release dist
+
 # branches
 ls: 
 	@echo "=================== $@ ======================="
