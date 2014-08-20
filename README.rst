@@ -23,6 +23,9 @@ Plonesocial consists of:
 plonesocial.like
  Favoriting of content
 
+`plonesocial.theme`_
+ A default theme based on bootstrap.
+
 `plonesocial.suite`_
  An out-of-the-box social business experience integrating all of the above.
  If you're an end user, this is what you're looking for.
@@ -35,6 +38,7 @@ This is a work in progress and not suitable for general release yet.
 .. _plonesocial.microblog: https://github.com/cosent/plonesocial.microblog
 .. _plonesocial.activitystream: https://github.com/cosent/plonesocial.activitystream
 .. _plonesocial.network: https://github.com/cosent/plonesocial.network
+.. _plonesocial.theme: https://github.com/cosent/plonesocial.theme
 .. _plonesocial.suite: https://github.com/cosent/plonesocial.suite
 .. _plonesocial.buildout: https://github.com/cosent/plonesocial.buildout
 
