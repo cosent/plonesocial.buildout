@@ -43,6 +43,7 @@ update:
 	@echo "=================== $@ ======================="
 	git pull
 	bin/develop update 'plonesocial.*'
+	bin/develop update 'ploneintranet.*'
 
 status: fetch localstatus
 
