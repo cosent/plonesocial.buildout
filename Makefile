@@ -82,13 +82,16 @@ flake8:
 	bin/flake8 src/plonesocial.theme/plonesocial
 	bin/flake8 src/ploneintranet.theme/src/ploneintranet
 
-rc:
+rc: noploneintranet
 	bin/release -c cook
 	bin/release -c dist
 
-release:
+release: noploneintranet
 	bin/release cook
 	bin/release dist
+
+noploneintranet:
+	@bin/develop ls | grep ploneintranet && (echo "ERROR: DO NOT RELEASE ploneintranet.theme!"; exit 1)
 
 # branches
 ls: 
