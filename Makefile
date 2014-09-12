@@ -41,15 +41,17 @@ stop:
 pull: update
 update: 
 	@echo "=================== $@ ======================="
-	git pull
-	bin/develop update 'plonesocial.*'
-	bin/develop update 'ploneintranet.*'
+	@echo -n "buildout... "
+	@git pull
+	@for p in plonesocial.suite plonesocial.microblog plonesocial.activitystream plonesocial.network plonesocial.messaging plonesocial.theme ploneintranet.theme ; \
+		do ( echo '---'; echo -n "$$p... " && cd src/$$p && git pull; ); \
+	done
 
 status: fetch localstatus
 
 localstatus:
 	@echo "=================== $@ ======================="
-	@for p in plonesocial.suite plonesocial.microblog plonesocial.activitystream plonesocial.network plonesocial.messaging plonesocial.theme ; \
+	@for p in plonesocial.suite plonesocial.microblog plonesocial.activitystream plonesocial.network plonesocial.messaging plonesocial.theme ploneintranet.theme ; \
 		do ( echo '---'; echo -n "$$p... " && cd src/$$p && git status; ); \
 	done
 	@echo '---'
@@ -58,7 +60,7 @@ localstatus:
 
 push:
 	@echo "=================== $@ ======================="
-	@for p in plonesocial.suite plonesocial.microblog plonesocial.activitystream plonesocial.network plonesocial.messaging plonesocial.theme ; \
+	@for p in plonesocial.suite plonesocial.microblog plonesocial.activitystream plonesocial.network plonesocial.messaging plonesocial.theme ploneintranet.theme ; \
 		do ( echo '---'; echo -n "$$p... " && cd src/$$p && git push && git push --tags ); \
 	done
 	@echo '---'
@@ -77,6 +79,7 @@ flake8:
 	bin/flake8 src/plonesocial.network/plonesocial
 	bin/flake8 src/plonesocial.messaging/plonesocial
 	bin/flake8 src/plonesocial.theme/plonesocial
+	bin/flake8 src/ploneintranet.theme/src/ploneintranet
 
 rc:
 	bin/release -c cook
@@ -89,7 +92,7 @@ release:
 # branches
 ls: 
 	@echo "=================== $@ ======================="
-	@for p in plonesocial.suite plonesocial.microblog plonesocial.activitystream plonesocial.messaging plonesocial.network ; \
+	@for p in plonesocial.suite plonesocial.microblog plonesocial.activitystream plonesocial.messaging plonesocial.network ploneintranet.theme ; \
 		do ( echo '---'; echo "$$p... " && cd src/$$p && git branch -a -v; ); \
 	done
 	@echo '---'
@@ -99,7 +102,7 @@ ls:
 # read remote
 fetch: 
 	@echo "=================== $@ ======================="
-	@for p in plonesocial.suite plonesocial.microblog plonesocial.activitystream plonesocial.messaging plonesocial.network ; \
+	@for p in plonesocial.suite plonesocial.microblog plonesocial.activitystream plonesocial.messaging plonesocial.network ploneintranet.theme ; \
 		do ( echo '---'; echo "$$p... " && cd src/$$p && git $@; ); \
 	done
 	@echo '---'
