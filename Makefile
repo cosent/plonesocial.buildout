@@ -1,3 +1,4 @@
+PROJECT=plonesocial.buildout
 default: all
 
 all: bin/buildout
@@ -5,6 +6,25 @@ all: bin/buildout
 
 fast: bin/buildout
 	bin/buildout -N
+
+docker-build:
+	docker build -t $(PROJECT) .
+
+# re-uses ssh agent
+# presupposes your buildout cache is in /var/tmp as configured in .buildout
+# also loads your standard .bashrc
+docker-run:
+	docker run -i -t \
+		--net=host \
+		-v $(SSH_AUTH_SOCK):/tmp/auth.sock \
+		-v $(HOME)/.gitconfig:/.gitconfig \
+		-v $(HOME)/.gitignore:/.gitignore \
+		-v /var/tmp:/var/tmp \
+		-v $(HOME)/.bashrc:/.bashrc \
+		-v $(HOME)/.buildout:/.buildout \
+		-e SSH_AUTH_SOCK=/tmp/auth.sock \
+		-v $(PWD):/app -w /app -u app $(PROJECT)
+
 
 robot-server:
 	bin/robot-server plonesocial.suite.testing.PLONESOCIAL_ROBOT_TESTING

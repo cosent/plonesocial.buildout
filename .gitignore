@@ -17,3 +17,4 @@ pickedversions.cfg
 omelette
 local/
 dist/
+.ssh/
