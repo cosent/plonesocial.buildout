@@ -139,10 +139,10 @@ fetch:
 ### helper targets ###
 
 bin/buildout: bin/python2.7
-	@bin/python2.7 bootstrap.py
+	@bin/pip install -r requirements.txt
 
 bin/python2.7:
-	@virtualenv --clear -p python2.7 --no-site-packages --distribute .
+	@virtualenv --clear --no-site-packages .
 
 precise: _check_apt
 	sudo apt-get install -y make gcc python2.7-dev libjpeg-dev zlib1g-dev python-setuptools wget jed git-core openssh-client
