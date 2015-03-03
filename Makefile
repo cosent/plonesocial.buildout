@@ -80,7 +80,8 @@ test: #flake8
 # this works only in docker, setting HOME to enable Firefox to write it's profile
 # if you want to see test failures, use DISPLAY=:0 instead
 	@echo "=================== $@ ======================="
-	Xvfb :99 1>/dev/null 2>&1 & HOME=/app DISPLAY=:99 bin/test -s plonesocial.suite -s plonesocial.microblog -s plonesocial.activitystream -s plonesocial.network -s plonesocial.messaging -s plonesocial.theme -s plonesocial.core
+	Xvfb :98 1>/dev/null 2>&1 & HOME=/app DISPLAY=:98 bin/test -s plonesocial.suite -s plonesocial.microblog -s plonesocial.activitystream -s plonesocial.network -s plonesocial.messaging -s plonesocial.theme -s plonesocial.core || true
+	@ps | grep Xvfb | grep -v grep | awk '{print $2}' | xargs kill 2>/dev/null
 
 flake8:
 	bin/flake8 src/plonesocial.suite/src/plonesocial
