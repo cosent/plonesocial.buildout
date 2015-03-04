@@ -5,6 +5,7 @@ run apt-get install -y python-dev gcc make zlib1g-dev libjpeg-dev python-virtual
 run apt-get install -y libfreetype6-dev gettext python-pip libxslt1-dev python-lxml
 run apt-get install -y jed firefox xvfb
 run apt-get install -y python-tk
+run apt-get install -y python-gdbm
 run useradd -m -d /app app
 run echo plonesocial.buildout > /etc/debian_chroot
 cmd ["/bin/bash"]
